@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Deploy Wizard</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <h1 id="app-title">Deploy Wizard</h1>
+            <p id="app-subtitle">Configura il tuo deployment</p>
+        </header>
+
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span class="progress-text" id="progress-text">Step 1 / 6</span>
+        </div>
+
+        <!-- Question container -->
+        <main class="question-container" id="question-container">
+            <!-- Questions will be rendered here -->
+        </main>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <button class="btn btn-secondary" id="btn-prev" disabled>
+                ← Indietro
+            </button>
+            <button class="btn btn-primary" id="btn-next">
+                Avanti →
+            </button>
+        </nav>
+
+        <!-- Summary (hidden until last step) -->
+        <div class="summary-container" id="summary-container" style="display: none;">
+            <h2>Riepilogo Deploy</h2>
+            <div id="summary-content"></div>
+            <button class="btn btn-success btn-large" id="btn-submit">
+                🚀 Avvia Deploy
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Avvio deploy in corso...</p>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="config/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
