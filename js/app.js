@@ -873,12 +873,16 @@ class DeployWizard {
         summaryContainer.style.display = 'block';
         
         document.getElementById('summary-content').innerHTML = this.buildSummaryHtml();
-        document.getElementById('btn-submit').textContent = this.config.app.submitButtonText;
         
-        // Update Telegram MainButton
+        // Hide custom submit button if using Telegram MainButton
+        const btnSubmit = document.getElementById('btn-submit');
         if (this.tg && this.config.app.useTelegramMainButton) {
+            btnSubmit.style.display = 'none';
             this.tg.MainButton.setText(this.config.app.submitButtonText);
             this.tg.MainButton.color = '#28a745';
+        } else {
+            btnSubmit.style.display = 'block';
+            btnSubmit.textContent = this.config.app.submitButtonText;
         }
         
         this.tg?.BackButton?.show();
