@@ -26,7 +26,7 @@ const DEPLOY_CONFIG = {
         // IMPORTANT: Set this to your backend URL
         backendUrl: "https://your-backend-url.com/api/v1/telegram/deploy",
         // Set to true to use Telegram's MainButton instead of custom button
-        useTelegramMainButton: true
+        useTelegramMainButton: false
     },
 
     // Fallback questions (used only if backend is unreachable)
