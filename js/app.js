@@ -59,7 +59,7 @@ class DeployWizard {
             console.error('Failed to load questions from backend, using fallback:', error);
             // Fallback to local config
             this.questions = this.config.questions || [];
-            this.showToast('Usando configurazione locale', 'info');
+            // this.showToast('Usando configurazione locale', 'info');
         }
         
         if (this.questions.length === 0) {

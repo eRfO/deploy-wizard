@@ -24,13 +24,13 @@ const DEPLOY_CONFIG = {
         subtitle: "Configura il tuo deployment",
         submitButtonText: "🚀 Avvia Deploy",
         // IMPORTANT: Set this to your backend URL
-        backendUrl: "https://your-backend-url.com/api/deploy",
+        backendUrl: "https://your-backend-url.com/api/v1/telegram/deploy",
         // Set to true to use Telegram's MainButton instead of custom button
         useTelegramMainButton: true
     },
 
     // Fallback questions (used only if backend is unreachable)
-    // In production, these are loaded from: GET /api/config/questions
+    // In production, these are loaded from: GET /api/v1/telegram/deploy/questions
     questions: [
         // ============================================================
         // STEP 1: Environment Selection (always shown)
@@ -44,6 +44,7 @@ const DEPLOY_CONFIG = {
             options: [
                 { value: "dev", label: "Development", hint: "Ambiente di sviluppo" },
                 { value: "staging", label: "Staging", hint: "Ambiente di pre-produzione" },
+                { value: "uat", label: "User Acceptance Test", hint: "Ambiente di pre-produzione" },
                 { value: "prod", label: "Production", hint: "⚠️ Ambiente di produzione" }
             ],
             // Branch based on environment selection
